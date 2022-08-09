@@ -41,7 +41,6 @@ import TokenOriginVerifier from "./components/TokenOriginVerifier";
 import Transfer from "./components/Transfer";
 import UnwrapNative from "./components/UnwrapNative";
 import WithdrawTokensTerra from "./components/WithdrawTokensTerra";
-import { useBetaContext } from "./contexts/BetaContext";
 import Portal from "./icons/portal_logo_w.svg";
 import { CLUSTER } from "./utils/consts";
 
@@ -102,10 +101,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       marginRight: theme.spacing(1),
     },
-  },
-  betaBanner: {
-    backgroundColor: "rgba(0,0,0,0.75)",
-    padding: theme.spacing(1, 0),
   },
   wormholeIcon: {
     height: 68,
@@ -179,7 +174,6 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-  const isBeta = useBetaContext();
   const { push } = useHistory();
   const { pathname } = useLocation();
   const handleTabChange = useCallback(
@@ -257,14 +251,6 @@ function App() {
           </Typography>
         </AppBar>
       )}
-      {isBeta ? (
-        <AppBar position="static" className={classes.betaBanner} elevation={0}>
-          <Typography style={{ textAlign: "center" }}>
-            Caution! You have enabled the beta. Enter the secret code again to
-            disable.
-          </Typography>
-        </AppBar>
-      ) : null}
       {["/transfer", "/nft", "/redeem"].includes(pathname) ? (
         <Container maxWidth="md" style={{ paddingBottom: 24 }}>
           <HeaderText

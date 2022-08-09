@@ -16,7 +16,6 @@ import {
 } from "@material-ui/core";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import { useCallback, useMemo, useState } from "react";
-import { useBetaContext } from "../contexts/BetaContext";
 import useFetchForeignAsset, {
   ForeignAssetInfo,
 } from "../hooks/useFetchForeignAsset";
@@ -24,7 +23,7 @@ import useIsWalletReady from "../hooks/useIsWalletReady";
 import useMetadata from "../hooks/useMetadata";
 import useOriginalAsset, { OriginalAssetInfo } from "../hooks/useOriginalAsset";
 import { COLORS } from "../muiTheme";
-import { BETA_CHAINS, CHAINS, CHAINS_BY_ID } from "../utils/consts";
+import { CHAINS, CHAINS_BY_ID } from "../utils/consts";
 import HeaderText from "./HeaderText";
 import KeyAndBalance from "./KeyAndBalance";
 import SmartAddress from "./SmartAddress";
@@ -180,7 +179,6 @@ function SecondaryAssetInformation({
 
 export default function TokenOriginVerifier() {
   const classes = useStyles();
-  const isBeta = useBetaContext();
 
   const [primaryLookupChain, setPrimaryLookupChain] = useState(CHAIN_ID_SOLANA);
   const [primaryLookupAsset, setPrimaryLookupAsset] = useState("");
@@ -188,18 +186,10 @@ export default function TokenOriginVerifier() {
   const [secondaryLookupChain, setSecondaryLookupChain] =
     useState<ChainId>(CHAIN_ID_ETH);
 
-  const primaryLookupChainOptions = useMemo(
-    () => (isBeta ? CHAINS.filter((x) => !BETA_CHAINS.includes(x.id)) : CHAINS),
-    [isBeta]
-  );
+  const primaryLookupChainOptions = CHAINS;
   const secondaryLookupChainOptions = useMemo(
-    () =>
-      isBeta
-        ? CHAINS.filter(
-            (x) => !BETA_CHAINS.includes(x.id) && x.id !== primaryLookupChain
-          )
-        : CHAINS.filter((x) => x.id !== primaryLookupChain),
-    [isBeta, primaryLookupChain]
+    () => CHAINS.filter((x) => x.id !== primaryLookupChain),
+    [primaryLookupChain]
   );
 
   const handlePrimaryLookupChainChange = useCallback(
