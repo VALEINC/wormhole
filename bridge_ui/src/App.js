@@ -35,13 +35,10 @@ import SolanaQuickMigrate from "./components/Migration/SolanaQuickMigrate";
 import NFT from "./components/NFT";
 import NFTOriginVerifier from "./components/NFTOriginVerifier";
 import Recovery from "./components/Recovery";
-import Stats from "./components/Stats";
-import CustodyAddresses from "./components/Stats/CustodyAddresses";
 import TokenOriginVerifier from "./components/TokenOriginVerifier";
 import Transfer from "./components/Transfer";
 import UnwrapNative from "./components/UnwrapNative";
 import WithdrawTokensTerra from "./components/WithdrawTokensTerra";
-import Portal from "./icons/portal_logo_w.svg";
 import { CLUSTER } from "./utils/consts";
 
 const useStyles = makeStyles((theme) => ({
@@ -196,7 +193,6 @@ function App() {
             to="/transfer"
             className={classes.brandLink}
           >
-            <img src={Portal} alt="Portal" className={classes.wormholeIcon} />
           </Link>
           <div className={classes.spacer} />
           <Hidden implementation="css" xsDown>
@@ -258,7 +254,7 @@ function App() {
             subtitle={
               <>
                 <Typography>
-                  Portal is a bridge that offers unlimited transfers across
+                  This is a generic token bridge that offers unlimited transfers across
                   chains for tokens and NFTs wrapped by Wormhole.
                 </Typography>
                 <Typography>
@@ -319,17 +315,11 @@ function App() {
         <Route exact path="/migrate/Solana/">
           <SolanaQuickMigrate />
         </Route>
-        <Route exact path="/stats">
-          <Stats />
-        </Route>
         <Route exact path="/withdraw-tokens-terra">
           <WithdrawTokensTerra />
         </Route>
         <Route exact path="/unwrap-native">
           <UnwrapNative />
-        </Route>
-        <Route exact path="/custody-addresses">
-          <CustodyAddresses />
         </Route>
         <Route>
           <Redirect to="/transfer" />
