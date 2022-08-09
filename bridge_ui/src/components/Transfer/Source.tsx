@@ -153,7 +153,7 @@ function Source() {
     <>
       <StepDescription>
         <div style={{ display: "flex", alignItems: "center" }}>
-          Select tokens to send through the Portal.
+          Select tokens to send through the testnet bridge.
           <div style={{ flexGrow: 1 }} />
           <div>
             <Button
