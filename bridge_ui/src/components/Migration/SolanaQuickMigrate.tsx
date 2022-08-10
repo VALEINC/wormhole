@@ -17,7 +17,7 @@ import {
 import { useCallback, useEffect, useMemo, useState } from "react";
 import useIsWalletReady from "../../hooks/useIsWalletReady";
 import useSolanaMigratorInformation from "../../hooks/useSolanaMigratorInformation";
-import { COLORS } from "../../muiTheme";
+// import { COLORS } from "../../muiTheme";
 import {
   CHAINS_BY_ID,
   getMigrationAssetMap,
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     flewGrow: 1,
   },
   mainPaper: {
-    backgroundColor: COLORS.whiteWithTransparency,
+    // backgroundColor: COLORS.whiteWithTransparency,
     textAlign: "center",
     padding: "2rem",
     "& > h, p ": {

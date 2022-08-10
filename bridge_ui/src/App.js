@@ -58,8 +58,8 @@ const useStyles = makeStyles((theme) => ({
   link: {
     ...theme.typography.body2,
     fontWeight: 600,
-    fontFamily: "Suisse BP Intl, sans-serif",
-    color: "white",
+    // fontFamily: "Suisse BP Intl, sans-serif",
+    // color: "white",
     marginLeft: theme.spacing(4),
     textUnderlineOffset: "6px",
     [theme.breakpoints.down("sm")]: {
@@ -88,85 +88,85 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "none",
     },
   },
-  iconButton: {
-    [theme.breakpoints.up("md")]: {
-      marginRight: theme.spacing(2.5),
-    },
-    [theme.breakpoints.down("sm")]: {
-      marginRight: theme.spacing(2.5),
-    },
-    [theme.breakpoints.down("xs")]: {
-      marginRight: theme.spacing(1),
-    },
-  },
-  wormholeIcon: {
-    height: 68,
-    "&:hover": {
-      filter: "contrast(1)",
-    },
-    verticalAlign: "middle",
-    marginRight: theme.spacing(1),
-    display: "inline-block",
-  },
-  gradientRight: {
-    position: "absolute",
-    top: "72px",
-    right: "-1000px",
-    width: "1757px",
-    height: "1506px",
-    background:
-      "radial-gradient(closest-side at 50% 50%, #FFCE00 0%, #FFCE0000 100%)",
-    opacity: "0.2",
-    transform: "matrix(0.87, 0.48, -0.48, 0.87, 0, 0)",
-    zIndex: "-1",
-    pointerEvent: "none",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
-  },
-  gradientLeft: {
-    top: "-530px",
-    left: "-350px",
-    width: "1379px",
-    height: "1378px",
-    position: "absolute",
-    background:
-      "radial-gradient(closest-side at 50% 50%, #F44B1B 0%, #F44B1B00 100%)",
-    opacity: "0.2",
-    zIndex: "-1",
-    pointerEvent: "none",
-  },
-  gradientLeft2: {
-    bottom: "-330px",
-    left: "-350px",
-    width: "1379px",
-    height: "1378px",
-    position: "absolute",
-    background:
-      "radial-gradient(closest-side at 50% 50%, #F44B1B 0%, #F44B1B00 100%)",
-    opacity: "0.2",
-    zIndex: "-1",
-    pointerEvent: "none",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
-  },
-  gradientRight2: {
-    position: "absolute",
-    bottom: "-900px",
-    right: "-1000px",
-    width: "1757px",
-    height: "1506px",
-    background:
-      "radial-gradient(closest-side at 50% 50%, #FFCE00 0%, #FFCE0000 100%)",
-    opacity: "0.24",
-    transform: "matrix(0.87, 0.48, -0.48, 0.87, 0, 0);",
-    zIndex: "-1",
-    pointerEvent: "none",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
-  },
+  // iconButton: {
+  //   [theme.breakpoints.up("md")]: {
+  //     marginRight: theme.spacing(2.5),
+  //   },
+  //   [theme.breakpoints.down("sm")]: {
+  //     marginRight: theme.spacing(2.5),
+  //   },
+  //   [theme.breakpoints.down("xs")]: {
+  //     marginRight: theme.spacing(1),
+  //   },
+  // },
+  // wormholeIcon: {
+  //   height: 68,
+  //   "&:hover": {
+  //     filter: "contrast(1)",
+  //   },
+  //   verticalAlign: "middle",
+  //   marginRight: theme.spacing(1),
+  //   display: "inline-block",
+  // },
+  // gradientRight: {
+  //   position: "absolute",
+  //   top: "72px",
+  //   right: "-1000px",
+  //   width: "1757px",
+  //   height: "1506px",
+  //   background:
+  //     "radial-gradient(closest-side at 50% 50%, #FFCE00 0%, #FFCE0000 100%)",
+  //   opacity: "0.2",
+  //   transform: "matrix(0.87, 0.48, -0.48, 0.87, 0, 0)",
+  //   zIndex: "-1",
+  //   pointerEvent: "none",
+  //   [theme.breakpoints.down("sm")]: {
+  //     display: "none",
+  //   },
+  // },
+  // gradientLeft: {
+  //   top: "-530px",
+  //   left: "-350px",
+  //   width: "1379px",
+  //   height: "1378px",
+  //   position: "absolute",
+  //   background:
+  //     "radial-gradient(closest-side at 50% 50%, #F44B1B 0%, #F44B1B00 100%)",
+  //   opacity: "0.2",
+  //   zIndex: "-1",
+  //   pointerEvent: "none",
+  // },
+  // gradientLeft2: {
+  //   bottom: "-330px",
+  //   left: "-350px",
+  //   width: "1379px",
+  //   height: "1378px",
+  //   position: "absolute",
+  //   background:
+  //     "radial-gradient(closest-side at 50% 50%, #F44B1B 0%, #F44B1B00 100%)",
+  //   opacity: "0.2",
+  //   zIndex: "-1",
+  //   pointerEvent: "none",
+  //   [theme.breakpoints.down("sm")]: {
+  //     display: "none",
+  //   },
+  // },
+  // gradientRight2: {
+  //   position: "absolute",
+  //   bottom: "-900px",
+  //   right: "-1000px",
+  //   width: "1757px",
+  //   height: "1506px",
+  //   background:
+  //     "radial-gradient(closest-side at 50% 50%, #FFCE00 0%, #FFCE0000 100%)",
+  //   opacity: "0.24",
+  //   transform: "matrix(0.87, 0.48, -0.48, 0.87, 0, 0);",
+  //   zIndex: "-1",
+  //   pointerEvent: "none",
+  //   [theme.breakpoints.down("sm")]: {
+  //     display: "none",
+  //   },
+  // },
 }));
 
 function App() {
@@ -243,7 +243,7 @@ function App() {
       {(
         <AppBar position="static" className={classes.betaBanner} elevation={0}>
           <Typography style={{ textAlign: "center", fontSize: 50 }}>
-            Caution! You are using the {CLUSTER} build of this app.
+            Caution! You are using the {CLUSTER.toUpperCase()} build of this app.
           </Typography>
         </AppBar>
       )}
@@ -254,12 +254,8 @@ function App() {
             subtitle={
               <>
                 <Typography>
-                  This is a generic token bridge that offers unlimited transfers across
+                  This is a developmental token bridge that tests transfers across
                   chains for tokens and NFTs wrapped by Wormhole.
-                </Typography>
-                <Typography>
-                  Unlike many other bridges, you avoid double wrapping and never
-                  have to retrace your steps.
                 </Typography>
               </>
             }
@@ -330,7 +326,7 @@ function App() {
       <div className={classes.gradientRight2}></div>
       <div className={classes.gradientLeft}></div>
       <div className={classes.gradientLeft2}></div>
-      <Footer />
+      <Footer/>
     </div>
   );
 }

@@ -28,7 +28,7 @@ import { useSelector } from "react-redux";
 import { selectTerraFeeDenom } from "../store/selectors";
 import TerraFeeDenomPicker from "./TerraFeeDenomPicker";
 import HeaderText from "./HeaderText";
-import { COLORS } from "../muiTheme";
+// import { COLORS } from "../muiTheme";
 import { CHAIN_ID_TERRA } from "@certusone/wormhole-sdk";
 
 const useStyles = makeStyles((theme) => ({
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   mainPaper: {
-    backgroundColor: COLORS.whiteWithTransparency,
+    // backgroundColor: COLORS.whiteWithTransparency,
     textAlign: "center",
     padding: "2rem",
     "& > h, p ": {

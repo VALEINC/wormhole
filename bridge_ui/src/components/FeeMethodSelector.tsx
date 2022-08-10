@@ -21,7 +21,7 @@ import SmartAddress from "../components/SmartAddress";
 import { useAcalaRelayerInfo } from "../hooks/useAcalaRelayerInfo";
 import useRelayerInfo from "../hooks/useRelayerInfo";
 import { GasEstimateSummary } from "../hooks/useTransactionFees";
-import { COLORS } from "../muiTheme";
+// import { COLORS } from "../muiTheme";
 import {
   selectTransferAmount,
   selectTransferOriginAsset,
@@ -48,11 +48,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "space-between",
     padding: theme.spacing(1),
-    background: COLORS.nearBlackWithMinorTransparency,
+    // background: COLORS.nearBlackWithMinorTransparency,
     "& > *": {
       margin: ".5rem",
     },
-    border: "1px solid " + COLORS.nearBlackWithMinorTransparency,
+    border: "1px solid ",// + COLORS.nearBlackWithMinorTransparency,
   },
   alignCenterContainer: {
     alignItems: "center",
@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   optionCardSelected: {
-    border: "1px solid " + COLORS.blue,
+    border: "1px solid ",// + COLORS.blue,
   },
   inlineBlock: {
     display: "inline-block",
@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
   },
   betaLabel: {
-    color: COLORS.white,
+    // color: COLORS.white,
     background: "linear-gradient(20deg, #f44b1b 0%, #eeb430 100%)",
     marginLeft: theme.spacing(1),
     fontSize: "120%",

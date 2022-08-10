@@ -53,7 +53,7 @@ import { useEthereumProvider } from "../contexts/EthereumProviderContext";
 import { useAcalaRelayerInfo } from "../hooks/useAcalaRelayerInfo";
 import useIsWalletReady from "../hooks/useIsWalletReady";
 import useRelayersAvailable, { Relayer } from "../hooks/useRelayersAvailable";
-import { COLORS } from "../muiTheme";
+// import { COLORS } from "../muiTheme";
 import { setRecoveryVaa as setRecoveryNFTVaa } from "../store/nftSlice";
 import { setRecoveryVaa } from "../store/transferSlice";
 import {
@@ -83,7 +83,6 @@ import RelaySelector from "./RelaySelector";
 const useStyles = makeStyles((theme) => ({
   mainCard: {
     padding: "32px 32px 16px",
-    backgroundColor: COLORS.whiteWithTransparency,
   },
   advancedContainer: {
     padding: theme.spacing(2, 0),

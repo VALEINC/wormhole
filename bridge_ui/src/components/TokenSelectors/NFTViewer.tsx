@@ -32,7 +32,7 @@ import polygonIcon from "../../icons/polygon.svg";
 import oasisIcon from "../../icons/oasis-network-rose-logo.svg";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { Skeleton } from "@material-ui/lab";
-import Wormhole from "../../icons/wormhole-network.svg";
+// import Wormhole from "../../icons/wormhole-network.svg";
 
 const safeIPFS = (uri: string) =>
   uri.startsWith("ipfs://ipfs/")
@@ -131,7 +131,7 @@ const LogoIcon = ({ chainId }: { chainId: ChainId }) =>
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    borderRadius: 9,
+    // borderRadius: 9,
     maxWidth: "100%",
     width: 400,
     margin: `${theme.spacing(1)}px auto`,
@@ -230,44 +230,44 @@ const useStyles = makeStyles((theme) => ({
     height: "500px",
     width: "400px",
     maxWidth: "100%",
-    borderRadius: 9,
+    // borderRadius: 9,
     display: "grid",
     placeItems: "center",
     position: "absolute",
   },
-  wormholeIcon: {
-    height: 48,
-    width: 48,
-    filter: "contrast(0)",
-    transition: "filter 0.5s",
-    "&:hover": {
-      filter: "contrast(1)",
-    },
-    verticalAlign: "middle",
-    marginRight: theme.spacing(1),
-    zIndex: 10,
-  },
-  wormholePositioner: {
-    display: "grid",
-    placeItems: "center",
-    position: "relative",
-    height: "500px",
-    width: "400px",
-    maxWidth: "100%",
-    margin: `${theme.spacing(1)}px auto`,
-  },
+  // wormholeIcon: {
+  //   height: 48,
+  //   width: 48,
+  //   filter: "contrast(0)",
+  //   transition: "filter 0.5s",
+  //   "&:hover": {
+  //     filter: "contrast(1)",
+  //   },
+  //   verticalAlign: "middle",
+  //   marginRight: theme.spacing(1),
+  //   zIndex: 10,
+  // },
+  // wormholePositioner: {
+  //   display: "grid",
+  //   placeItems: "center",
+  //   position: "relative",
+  //   height: "500px",
+  //   width: "400px",
+  //   maxWidth: "100%",
+  //   margin: `${theme.spacing(1)}px auto`,
+  // },
 }));
 
-const ViewerLoader = () => {
-  const classes = useStyles();
+// const ViewerLoader = () => {
+//   const classes = useStyles();
 
-  return (
-    <div className={classes.wormholePositioner}>
-      <Skeleton variant="rect" animation="wave" className={classes.skeleton} />
-      <img src={Wormhole} alt="Wormhole" className={classes.wormholeIcon} />
-    </div>
-  );
-};
+//   return (
+//     <div className={classes.wormholePositioner}>
+//       <Skeleton variant="rect" animation="wave" className={classes.skeleton} />
+//       {/* <img src={Wormhole} alt="Wormhole" className={classes.wormholeIcon} /> */}
+//     </div>
+//   );
+// };
 
 export default function NFTViewer({
   value,
@@ -411,7 +411,7 @@ export default function NFTViewer({
   return (
     <>
       <div className={!isLoading ? classes.hidden : ""}>
-        <ViewerLoader />
+        {/* <ViewerLoader /> */}
       </div>
       <Card
         className={clsx(classes.card, {

@@ -22,7 +22,7 @@ import useFetchForeignAsset, {
 import useIsWalletReady from "../hooks/useIsWalletReady";
 import useMetadata from "../hooks/useMetadata";
 import useOriginalAsset, { OriginalAssetInfo } from "../hooks/useOriginalAsset";
-import { COLORS } from "../muiTheme";
+// import { COLORS } from "../muiTheme";
 import { CHAINS, CHAINS_BY_ID } from "../utils/consts";
 import HeaderText from "./HeaderText";
 import KeyAndBalance from "./KeyAndBalance";
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mainCard: {
     padding: "32px 32px 16px",
-    backgroundColor: COLORS.whiteWithTransparency,
+    // backgroundColor: COLORS.whiteWithTransparency,
   },
   spacer: {
     height: theme.spacing(3),

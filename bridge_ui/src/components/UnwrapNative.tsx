@@ -31,7 +31,7 @@ import klaytnIcon from "../icons/klaytn.svg";
 import neonIcon from "../icons/neon.svg";
 import oasisIcon from "../icons/oasis-network-rose-logo.svg";
 import polygonIcon from "../icons/polygon.svg";
-import { COLORS } from "../muiTheme";
+// import { COLORS } from "../muiTheme";
 import {
   DataWrapper,
   errorDataWrapper,
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   mainPaper: {
-    backgroundColor: COLORS.whiteWithTransparency,
+    // backgroundColor: COLORS.whiteWithTransparency,
     textAlign: "center",
     padding: "2rem",
     "& > h, p ": {

@@ -34,7 +34,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useEthereumProvider } from "../contexts/EthereumProviderContext";
 import useIsWalletReady from "../hooks/useIsWalletReady";
 import { getMetaplexData } from "../hooks/useMetaplexData";
-import { COLORS } from "../muiTheme";
+// import { COLORS } from "../muiTheme";
 import { NFTParsedTokenAccount } from "../store/nftSlice";
 import {
   CHAINS_BY_ID,
@@ -56,7 +56,7 @@ import NFTViewer from "./TokenSelectors/NFTViewer";
 const useStyles = makeStyles((theme) => ({
   mainCard: {
     padding: "32px 32px 16px",
-    backgroundColor: COLORS.whiteWithTransparency,
+    // backgroundColor: COLORS.whiteWithTransparency,
   },
   originHeader: {
     marginTop: theme.spacing(4),
