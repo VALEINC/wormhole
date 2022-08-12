@@ -1,36 +1,36 @@
 import { ChainId } from "@certusone/wormhole-sdk";
 import {
   Button,
-  CircularProgress,
+  // CircularProgress,
   createStyles,
   Dialog,
-  DialogContent,
+  // DialogContent,
   DialogTitle,
-  Divider,
+  // Divider,
   IconButton,
-  Link,
-  List,
-  ListItem,
+  // Link,
+  // List,
+  // ListItem,
   makeStyles,
-  TextField,
+  // TextField,
   Tooltip,
   Typography,
 } from "@material-ui/core";
-import { InfoOutlined, Launch } from "@material-ui/icons";
+// import { InfoOutlined, Launch } from "@material-ui/icons";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import RefreshIcon from "@material-ui/icons/Refresh";
 import { Alert } from "@material-ui/lab";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { useSelector } from "react-redux";
-import useMarketsMap from "../../hooks/useMarketsMap";
+// import React, 
+import { useCallback, useEffect, useState } from "react";
+// import { useSelector } from "react-redux";
 import { NFTParsedTokenAccount } from "../../store/nftSlice";
-import { selectTransferTargetChain } from "../../store/selectors";
+// import { selectTransferTargetChain } from "../../store/selectors";
 import { balancePretty } from "../../utils/balancePretty";
-import {
-  AVAILABLE_MARKETS_URL,
-  CHAINS_BY_ID,
-  getIsTokenTransferDisabled,
-} from "../../utils/consts";
+// import {
+//   AVAILABLE_MARKETS_URL,
+//   CHAINS_BY_ID,
+//   getIsTokenTransferDisabled,
+// } from "../../utils/consts";
 import { shortenAddress } from "../../utils/solana";
 import NFTViewer from "./NFTViewer";
 
@@ -120,9 +120,9 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-const noClickThrough = (e: any) => {
-  e.stopPropagation();
-};
+// const noClickThrough = (e: any) => {
+//   e.stopPropagation();
+// };
 
 export const BasicAccountRender = (
   account: MarketParsedTokenAccount,
@@ -130,7 +130,6 @@ export const BasicAccountRender = (
   nft: boolean,
   displayBalance?: (account: NFTParsedTokenAccount) => boolean
 ) => {
-  const { data: marketsData } = useMarketsMap(false);
   const classes = useStyles();
   const mintPrettyString = shortenAddress(account.mintKey);
   const uri = nft ? account.image_256 : account.logo || account.uri;
@@ -157,27 +156,6 @@ export const BasicAccountRender = (
 
   const tokenContent = (
     <div className={classes.tokenOverviewContainer}>
-      {account.markets ? (
-        <div className={classes.tokenMarketsList}>
-          {account.markets.map((market) =>
-            marketsData?.markets?.[market] ? (
-              <Button
-                key={market}
-                size="small"
-                variant="outlined"
-                color="secondary"
-                startIcon={<Launch />}
-                href={marketsData.markets[market].link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={noClickThrough}
-              >
-                {marketsData.markets[market].name}
-              </Button>
-            ) : null
-          )}
-        </div>
-      ) : null}
       <div className={classes.tokenImageContainer}>
         {uri && <img alt="" className={classes.tokenImage} src={uri} />}
       </div>
@@ -272,8 +250,7 @@ export default function TokenPicker({
   const [dialogIsOpen, setDialogIsOpen] = useState(false);
   const [selectionError, setSelectionError] = useState("");
 
-  const targetChain = useSelector(selectTransferTargetChain);
-  const { data: marketsData } = useMarketsMap(true);
+  // const targetChain = useSelector(selectTransferTargetChain);
 
   const openDialog = useCallback(() => {
     setHolderString("");
@@ -325,77 +302,26 @@ export default function TokenPicker({
     resetAccounts && resetAccounts();
   }, [resetAccounts]);
 
-  const searchFilter = useCallback(
-    (option: NFTParsedTokenAccount) => {
-      if (!holderString) {
-        return true;
-      }
-      const optionString = (
-        (option.publicKey || "") +
-        " " +
-        (option.mintKey || "") +
-        " " +
-        (option.symbol || "") +
-        " " +
-        (option.name || " ")
-      ).toLowerCase();
-      const searchString = holderString.toLowerCase();
-      return optionString.includes(searchString);
-    },
-    [holderString]
-  );
-
-  const marketChainTokens = marketsData?.tokens?.[chainId];
-  const featuredMarkets = marketsData?.tokenMarkets?.[chainId]?.[targetChain];
-
-  const featuredOptions = useMemo(() => {
-    // only tokens have featured markets
-    if (!nft && featuredMarkets) {
-      const ownedMarketTokens = options
-        .filter(
-          (option: NFTParsedTokenAccount) => featuredMarkets?.[option.mintKey]
-        )
-        .map(
-          (option) =>
-            ({
-              ...option,
-              markets: featuredMarkets[option.mintKey].markets,
-            } as MarketParsedTokenAccount)
-        );
-      return [
-        ...ownedMarketTokens,
-        ...Object.keys(featuredMarkets)
-          .filter(
-            (mintKey) =>
-              !ownedMarketTokens.find((option) => option.mintKey === mintKey)
-          )
-          .map(
-            (mintKey) =>
-              ({
-                amount: "0",
-                decimals: 0,
-                markets: featuredMarkets[mintKey].markets,
-                mintKey,
-                publicKey: "",
-                uiAmount: 0,
-                uiAmountString: "0", // if we can't look up by address, we can select the market that isn't in the list of holdings, but can't proceed since the balance will be 0
-                symbol: marketChainTokens?.[mintKey]?.symbol,
-                logo: marketChainTokens?.[mintKey]?.logo,
-              } as MarketParsedTokenAccount)
-          ),
-      ].filter(searchFilter);
-    }
-    return [];
-  }, [nft, marketChainTokens, featuredMarkets, options, searchFilter]);
-
-  const nonFeaturedOptions = useMemo(() => {
-    return options.filter(
-      (option: NFTParsedTokenAccount) =>
-        searchFilter(option) &&
-        // only tokens have featured markets
-        (nft || !featuredMarkets?.[option.mintKey])
-    );
-  }, [nft, options, featuredMarkets, searchFilter]);
+  // const searchFilter = useCallback(
+  //   (option: NFTParsedTokenAccount) => {
+  //     if (!holderString) {
+  //       return true;
+  //     }
+  //     const optionString = (
+  //       (option.publicKey || "") +
+  //       " " +
+  //       (option.mintKey || "") +
+  //       " " +
+  //       (option.symbol || "") +
+  //       " " +
+  //       (option.name || " ")
+  //     ).toLowerCase();
+  //     const searchString = holderString.toLowerCase();
+  //     return optionString.includes(searchString);
+  //   },
+  //   [holderString]
+  // );
+  
 
   const localFind = useCallback(
     (address: string, tokenIdHolderString: string) => {
@@ -464,22 +390,22 @@ export default function TokenPicker({
   //TODO debounce & save hotloaded options as an option before automatically selecting
   //TODO sigfigs function on the balance strings
 
-  const localLoader = (
-    <div className={classes.alignCenter}>
-      <CircularProgress />
-      <Typography variant="body2">
-        {showLoader ? "Loading available tokens" : "Searching for results"}
-      </Typography>
-    </div>
-  );
+  // const localLoader = (
+  //   <div className={classes.alignCenter}>
+  //     <CircularProgress />
+  //     <Typography variant="body2">
+  //       {showLoader ? "Loading available tokens" : "Searching for results"}
+  //     </Typography>
+  //   </div>
+  // );
 
-  const displayLocalError = (
-    <div className={classes.alignCenter}>
-      <Typography variant="body2" color="error">
-        {loadingError || selectionError}
-      </Typography>
-    </div>
-  );
+  // const displayLocalError = (
+  //   <div className={classes.alignCenter}>
+  //     <Typography variant="body2" color="error">
+  //       {loadingError || selectionError}
+  //     </Typography>
+  //   </div>
+  // );
 
   const dialog = (
     <Dialog
@@ -500,114 +426,8 @@ export default function TokenPicker({
           </Tooltip>
         </div>
       </DialogTitle>
-      <DialogContent className={classes.dialogContent}>
-        <Alert severity="info">
-          You should always check for markets and liquidity before sending
-          tokens.{" "}
-          <Link
-            href={AVAILABLE_MARKETS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Click here to see available markets for wrapped tokens.
-          </Link>
-        </Alert>
-        <TextField
-          variant="outlined"
-          label="Search name or paste address"
-          value={holderString}
-          onChange={(event) => setHolderString(event.target.value)}
-          fullWidth
-          margin="normal"
-        />
-        {useTokenId ? (
-          <TextField
-            variant="outlined"
-            label="Token Id"
-            value={tokenIdHolderString}
-            onChange={(event) => setTokenIdHolderString(event.target.value)}
-            fullWidth
-            margin="normal"
-          />
-        ) : null}
-        {isLocalLoading || showLoader ? (
-          localLoader
-        ) : loadingError || selectionError ? (
-          displayLocalError
-        ) : (
-          <List component="div" className={classes.tokenList}>
-            {featuredOptions.length ? (
-              <>
-                <Typography variant="subtitle2" gutterBottom>
-                  Featured {CHAINS_BY_ID[chainId].name} &gt;{" "}
-                  {CHAINS_BY_ID[targetChain].name} markets{" "}
-                  <Tooltip
-                    title={`Markets for these ${CHAINS_BY_ID[chainId].name} tokens exist for the corresponding tokens on ${CHAINS_BY_ID[targetChain].name}`}
-                  >
-                    <InfoOutlined
-                      fontSize="small"
-                      style={{ verticalAlign: "text-bottom" }}
-                    />
-                  </Tooltip>
-                </Typography>
-                {featuredOptions.map((option) => {
-                  return (
-                    <ListItem
-                      component="div"
-                      button
-                      onClick={() => handleSelectOption(option)}
-                      key={
-                        option.publicKey +
-                        option.mintKey +
-                        (option.tokenId || "")
-                      }
-                      disabled={getIsTokenTransferDisabled(
-                        chainId,
-                        targetChain,
-                        option.mintKey
-                      )}
-                    >
-                      <RenderOption account={option} />
-                    </ListItem>
-                  );
-                })}
-                {nonFeaturedOptions.length ? (
-                  <>
-                    <Divider style={{ marginTop: 8, marginBottom: 16 }} />
-                    <Typography variant="subtitle2" gutterBottom>
-                      Other Assets
-                    </Typography>
-                  </>
-                ) : null}
-              </>
-            ) : null}
-            {nonFeaturedOptions.map((option) => {
-              return (
-                <ListItem
-                  component="div"
-                  button
-                  onClick={() => handleSelectOption(option)}
-                  key={
-                    option.publicKey + option.mintKey + (option.tokenId || "")
-                  }
-                  disabled={getIsTokenTransferDisabled(
-                    chainId,
-                    targetChain,
-                    option.mintKey
-                  )}
-                >
-                  <RenderOption account={option} />
-                </ListItem>
-              );
-            })}
-            {featuredOptions.length || nonFeaturedOptions.length ? null : (
-              <div className={classes.alignCenter}>
-                <Typography>No results found</Typography>
-              </div>
-            )}
-          </List>
-        )}
-      </DialogContent>
+      
+
     </Dialog>
   );
 

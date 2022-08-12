@@ -31,7 +31,6 @@ import solanaIcon from "../../icons/solana.svg";
 import polygonIcon from "../../icons/polygon.svg";
 import oasisIcon from "../../icons/oasis-network-rose-logo.svg";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
-import { Skeleton } from "@material-ui/lab";
 // import Wormhole from "../../icons/wormhole-network.svg";
 
 const safeIPFS = (uri: string) =>
@@ -226,15 +225,7 @@ const useStyles = makeStyles((theme) => ({
   hidden: {
     display: "none",
   },
-  skeleton: {
-    height: "500px",
-    width: "400px",
-    maxWidth: "100%",
-    // borderRadius: 9,
-    display: "grid",
-    placeItems: "center",
-    position: "absolute",
-  },
+
   // wormholeIcon: {
   //   height: 48,
   //   width: 48,
