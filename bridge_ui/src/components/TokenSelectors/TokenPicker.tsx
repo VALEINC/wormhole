@@ -46,7 +46,6 @@ const useStyles = makeStyles((theme) =>
       overflowX: "hidden",
     },
     selectionButtonContainer: {
-      //display: "flex",
       textAlign: "center",
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(2),
@@ -313,7 +312,6 @@ export default function TokenPicker({
   const nonFeaturedOptions = useMemo(() => {
     return options.filter(
       (option: NFTParsedTokenAccount) => searchFilter(option) // &&
-      // only tokens have featured markets
       //nft
     );
   }, [options, searchFilter]);

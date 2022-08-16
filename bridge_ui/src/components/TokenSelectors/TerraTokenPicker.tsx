@@ -1,7 +1,7 @@
 import { ChainId, isNativeDenom, TerraChainId } from "@certusone/wormhole-sdk";
 import { formatUnits } from "@ethersproject/units";
 import { LCDClient } from "@terra-money/terra.js";
-import React, { useCallback, useMemo, useRef } from "react";
+import { useCallback, useMemo, useRef } from "react";
 import { createParsedTokenAccount } from "../../hooks/useGetSourceParsedTokenAccounts";
 import useIsWalletReady from "../../hooks/useIsWalletReady";
 import useTerraNativeBalances from "../../hooks/useTerraNativeBalances";

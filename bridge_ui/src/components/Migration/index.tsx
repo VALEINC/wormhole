@@ -9,7 +9,6 @@ import { Container, makeStyles, Paper, Typography } from "@material-ui/core";
 import { PublicKey } from "@solana/web3.js";
 import { withRouter } from "react-router";
 import { RouteComponentProps } from "react-router-dom";
-// import { COLORS } from "../../muiTheme";
 import { getMigrationAssetMap, MIGRATION_ASSET_MAP } from "../../utils/consts";
 import HeaderText from "../HeaderText";
 import EvmWorkflow from "./EvmWorkflow";
@@ -17,7 +16,6 @@ import SolanaWorkflow from "./SolanaWorkflow";
 
 const useStyles = makeStyles(() => ({
   mainPaper: {
-    // backgroundColor: COLORS.whiteWithTransparency,
     textAlign: "center",
     padding: "2rem",
     "& > h, p ": {

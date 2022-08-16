@@ -22,7 +22,6 @@ import useFetchForeignAsset, {
 import useIsWalletReady from "../hooks/useIsWalletReady";
 import useMetadata from "../hooks/useMetadata";
 import useOriginalAsset, { OriginalAssetInfo } from "../hooks/useOriginalAsset";
-// import { COLORS } from "../muiTheme";
 import { CHAINS, CHAINS_BY_ID } from "../utils/consts";
 import HeaderText from "./HeaderText";
 import KeyAndBalance from "./KeyAndBalance";
@@ -40,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
   },
   mainCard: {
     padding: "32px 32px 16px",
-    // backgroundColor: COLORS.whiteWithTransparency,
   },
   spacer: {
     height: theme.spacing(3),
@@ -59,10 +57,8 @@ const useStyles = makeStyles((theme) => ({
 
 function PrimaryAssetInfomation({
   lookupChain,
-  lookupAsset,
   originChain,
   originAsset,
-  showLoader,
 }: {
   lookupChain: ChainId;
   lookupAsset: string;
@@ -75,12 +71,12 @@ function PrimaryAssetInfomation({
   const metadata = useMetadata(originChain, tokenArray);
   const nativeContent = (
     <div>
-      <Typography>{`This is not a wrapped asset in testnet.`}</Typography>
+      <Typography>{`This is not a wrapped asset.`}</Typography>
     </div>
   );
   const wrapped = (
     <div>
-      <Typography>{`This is wrapped asset in testnet! Here is the original token: `}</Typography>
+      <Typography>{`This is wrapped asset! Here is the original token: `}</Typography>
       <div className={classes.flexBox}>
         <Typography>{`Chain: ${CHAINS_BY_ID[originChain].name}`}</Typography>
         <div>

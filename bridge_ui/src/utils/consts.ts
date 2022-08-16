@@ -44,7 +44,7 @@ import terra2Icon from "../icons/terra2.svg";
 
 export type Cluster = "devnet" | "testnet" | "mainnet";
 export const CLUSTER: Cluster =
-  process.env.REACT_APP_CLUSTER === "mainnet"
+  process.env.REACT_APP_CLUSTER === ""
     ? "mainnet"
     : process.env.REACT_APP_CLUSTER === "testnet"
     ? "testnet"

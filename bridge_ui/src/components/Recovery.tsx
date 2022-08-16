@@ -53,7 +53,6 @@ import { useEthereumProvider } from "../contexts/EthereumProviderContext";
 import { useAcalaRelayerInfo } from "../hooks/useAcalaRelayerInfo";
 import useIsWalletReady from "../hooks/useIsWalletReady";
 import useRelayersAvailable, { Relayer } from "../hooks/useRelayersAvailable";
-// import { COLORS } from "../muiTheme";
 import { setRecoveryVaa as setRecoveryNFTVaa } from "../store/nftSlice";
 import { setRecoveryVaa } from "../store/transferSlice";
 import {

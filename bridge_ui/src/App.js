@@ -6,22 +6,17 @@ import {
 import {
   AppBar,
   Container,
-  Hidden,
-  IconButton,
   Link,
   makeStyles,
   Tab,
   Tabs,
   Toolbar,
-  Tooltip,
   Typography,
 } from "@material-ui/core";
-import { HelpOutline } from "@material-ui/icons";
 import { useCallback } from "react";
 import { useHistory, useLocation } from "react-router";
 import {
   Link as RouterLink,
-  NavLink,
   Redirect,
   Route,
   Switch,
@@ -58,8 +53,6 @@ const useStyles = makeStyles((theme) => ({
   link: {
     ...theme.typography.body2,
     fontWeight: 600,
-    // fontFamily: "Suisse BP Intl, sans-serif",
-    // color: "white",
     marginLeft: theme.spacing(4),
     textUnderlineOffset: "6px",
     [theme.breakpoints.down("sm")]: {
@@ -74,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
   },
   bg: {
     // background:
-    //   "linear-gradient(160deg, rgba(69,74,117,.1) 0%, rgba(138,146,178,.1) 33%, rgba(69,74,117,.1) 66%, rgba(98,104,143,.1) 100%), linear-gradient(45deg, rgba(153,69,255,.1) 0%, rgba(121,98,231,.1) 20%, rgba(0,209,140,.1) 100%)",
     display: "flex",
     flexDirection: "column",
     minHeight: "100vh",
@@ -87,86 +79,7 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       textDecoration: "none",
     },
-  },
-  // iconButton: {
-  //   [theme.breakpoints.up("md")]: {
-  //     marginRight: theme.spacing(2.5),
-  //   },
-  //   [theme.breakpoints.down("sm")]: {
-  //     marginRight: theme.spacing(2.5),
-  //   },
-  //   [theme.breakpoints.down("xs")]: {
-  //     marginRight: theme.spacing(1),
-  //   },
-  // },
-  // wormholeIcon: {
-  //   height: 68,
-  //   "&:hover": {
-  //     filter: "contrast(1)",
-  //   },
-  //   verticalAlign: "middle",
-  //   marginRight: theme.spacing(1),
-  //   display: "inline-block",
-  // },
-  // gradientRight: {
-  //   position: "absolute",
-  //   top: "72px",
-  //   right: "-1000px",
-  //   width: "1757px",
-  //   height: "1506px",
-  //   background:
-  //     "radial-gradient(closest-side at 50% 50%, #FFCE00 0%, #FFCE0000 100%)",
-  //   opacity: "0.2",
-  //   transform: "matrix(0.87, 0.48, -0.48, 0.87, 0, 0)",
-  //   zIndex: "-1",
-  //   pointerEvent: "none",
-  //   [theme.breakpoints.down("sm")]: {
-  //     display: "none",
-  //   },
-  // },
-  // gradientLeft: {
-  //   top: "-530px",
-  //   left: "-350px",
-  //   width: "1379px",
-  //   height: "1378px",
-  //   position: "absolute",
-  //   background:
-  //     "radial-gradient(closest-side at 50% 50%, #F44B1B 0%, #F44B1B00 100%)",
-  //   opacity: "0.2",
-  //   zIndex: "-1",
-  //   pointerEvent: "none",
-  // },
-  // gradientLeft2: {
-  //   bottom: "-330px",
-  //   left: "-350px",
-  //   width: "1379px",
-  //   height: "1378px",
-  //   position: "absolute",
-  //   background:
-  //     "radial-gradient(closest-side at 50% 50%, #F44B1B 0%, #F44B1B00 100%)",
-  //   opacity: "0.2",
-  //   zIndex: "-1",
-  //   pointerEvent: "none",
-  //   [theme.breakpoints.down("sm")]: {
-  //     display: "none",
-  //   },
-  // },
-  // gradientRight2: {
-  //   position: "absolute",
-  //   bottom: "-900px",
-  //   right: "-1000px",
-  //   width: "1757px",
-  //   height: "1506px",
-  //   background:
-  //     "radial-gradient(closest-side at 50% 50%, #FFCE00 0%, #FFCE0000 100%)",
-  //   opacity: "0.24",
-  //   transform: "matrix(0.87, 0.48, -0.48, 0.87, 0, 0);",
-  //   zIndex: "-1",
-  //   pointerEvent: "none",
-  //   [theme.breakpoints.down("sm")]: {
-  //     display: "none",
-  //   },
-  // },
+  }
 }));
 
 function App() {
@@ -195,7 +108,7 @@ function App() {
           >
           </Link>
           <div className={classes.spacer} />
-          <Hidden implementation="css" xsDown>
+          {/* <Hidden implementation="css" xsDown>
             <div style={{ display: "flex", alignItems: "center" }}>
               <Link
                 component={NavLink}
@@ -237,7 +150,7 @@ function App() {
                 <HelpOutline />
               </IconButton>
             </Tooltip>
-          </Hidden>
+          </Hidden> */}
         </Toolbar>
       </AppBar>
       {(

@@ -31,7 +31,6 @@ import solanaIcon from "../../icons/solana.svg";
 import polygonIcon from "../../icons/polygon.svg";
 import oasisIcon from "../../icons/oasis-network-rose-logo.svg";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
-// import Wormhole from "../../icons/wormhole-network.svg";
 
 const safeIPFS = (uri: string) =>
   uri.startsWith("ipfs://ipfs/")
@@ -130,7 +129,6 @@ const LogoIcon = ({ chainId }: { chainId: ChainId }) =>
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    // borderRadius: 9,
     maxWidth: "100%",
     width: 400,
     margin: `${theme.spacing(1)}px auto`,
@@ -197,7 +195,6 @@ const useStyles = makeStyles((theme) => ({
       borderColor: "#D7DDE8",
     },
   },
-  // thanks https://cssgradient.io/ and https://htmlcolorcodes.com/color-picker/
   eth: {
     // colors from https://en.wikipedia.org/wiki/Ethereum#/media/File:Ethereum-icon-purple.svg
     backgroundColor: "rgb(69,74,117)",
@@ -226,39 +223,7 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
   },
 
-  // wormholeIcon: {
-  //   height: 48,
-  //   width: 48,
-  //   filter: "contrast(0)",
-  //   transition: "filter 0.5s",
-  //   "&:hover": {
-  //     filter: "contrast(1)",
-  //   },
-  //   verticalAlign: "middle",
-  //   marginRight: theme.spacing(1),
-  //   zIndex: 10,
-  // },
-  // wormholePositioner: {
-  //   display: "grid",
-  //   placeItems: "center",
-  //   position: "relative",
-  //   height: "500px",
-  //   width: "400px",
-  //   maxWidth: "100%",
-  //   margin: `${theme.spacing(1)}px auto`,
-  // },
 }));
-
-// const ViewerLoader = () => {
-//   const classes = useStyles();
-
-//   return (
-//     <div className={classes.wormholePositioner}>
-//       <Skeleton variant="rect" animation="wave" className={classes.skeleton} />
-//       {/* <img src={Wormhole} alt="Wormhole" className={classes.wormholeIcon} /> */}
-//     </div>
-//   );
-// };
 
 export default function NFTViewer({
   value,
@@ -333,7 +298,6 @@ export default function NFTViewer({
 
   const classes = useStyles();
   const animLower = metadata.animation_url?.toLowerCase();
-  // const has3DModel = animLower?.endsWith('gltf') || animLower?.endsWith('glb')
   const hasVideo =
     !animLower?.startsWith("ipfs://") && // cloudflare ipfs doesn't support streaming video
     (animLower?.endsWith("webm") ||
