@@ -7,7 +7,6 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
-  Link,
   List,
   ListItem,
   makeStyles,
@@ -23,10 +22,7 @@ import { useSelector } from "react-redux";
 import { NFTParsedTokenAccount } from "../../store/nftSlice";
 import { selectTransferTargetChain } from "../../store/selectors";
 import { balancePretty } from "../../utils/balancePretty";
-import {
-  AVAILABLE_MARKETS_URL,
-  getIsTokenTransferDisabled,
-} from "../../utils/consts";
+import { getIsTokenTransferDisabled } from "../../utils/consts";
 import { shortenAddress } from "../../utils/solana";
 import NFTViewer from "./NFTViewer";
 
@@ -426,17 +422,6 @@ export default function TokenPicker({
         </div>
       </DialogTitle>
       <DialogContent className={classes.dialogContent}>
-        <Alert severity="info">
-          You should always check for markets and liquidity before sending
-          tokens.{" "}
-          <Link
-            href={AVAILABLE_MARKETS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Click here to see available markets for wrapped tokens.
-          </Link>
-        </Alert>
         <TextField
           variant="outlined"
           label="Search name or paste address"
