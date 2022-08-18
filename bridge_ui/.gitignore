@@ -25,3 +25,5 @@ yarn-error.log*
 # ethereum contracts
 /contracts
 /src/ethers-contracts
+
+.history

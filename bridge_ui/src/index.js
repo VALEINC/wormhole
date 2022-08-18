@@ -14,27 +14,27 @@ import { theme } from "./muiTheme";
 import { store } from "./store";
 
 ReactDOM.render(
-  <ErrorBoundary>
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <ErrorBoundary>
-          <SnackbarProvider maxSnack={3}>
-              <SolanaWalletProvider>
-                <EthereumProviderProvider>
-                  <TerraWalletProvider>
-                    <AlgorandContextProvider>
-                      <HashRouter>
-                        <App />
-                      </HashRouter>
-                    </AlgorandContextProvider>
-                  </TerraWalletProvider>
-                </EthereumProviderProvider>
-              </SolanaWalletProvider>
-          </SnackbarProvider>
-        </ErrorBoundary>
-      </ThemeProvider>
-    </Provider>
-  </ErrorBoundary>,
-  document.getElementById("root")
+    <ErrorBoundary>
+        <Provider store={store}>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <ErrorBoundary>
+                    <SnackbarProvider maxSnack={3}>
+                        <SolanaWalletProvider>
+                            <EthereumProviderProvider>
+                                <TerraWalletProvider>
+                                    <AlgorandContextProvider>
+                                        <HashRouter>
+                                            <App />
+                                        </HashRouter>
+                                    </AlgorandContextProvider>
+                                </TerraWalletProvider>
+                            </EthereumProviderProvider>
+                        </SolanaWalletProvider>
+                    </SnackbarProvider>
+                </ErrorBoundary>
+            </ThemeProvider>
+        </Provider>
+    </ErrorBoundary>,
+    document.getElementById("root")
 );
