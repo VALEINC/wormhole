@@ -10,6 +10,11 @@ export const theme = responsiveFontSizes(
         },
 
         typography: {
+            fontFamily: [
+                'Inter',
+                '-apple-system',
+                'sans-serif',
+            ],
             fontSize: 13,
             h1: {
                 lineHeight: 0.9,
@@ -23,6 +28,11 @@ export const theme = responsiveFontSizes(
                 fontWeight: "600",
                 letterSpacing: -1.02,
             },
+        },
+        props: {
+            MuiButtonBase: {
+                disableRipple: true
+            }
         },
         overrides: {
             MuiCssBaseline: {
@@ -62,6 +72,7 @@ export const theme = responsiveFontSizes(
             },
             MuiButton: {
                 root: {
+                    disableRipple: true
                 },
                 outlinedSizeSmall: {
                     padding: "6px 9px",
@@ -132,6 +143,11 @@ export const theme = responsiveFontSizes(
                     borderBottom: "none",
                 },
             },
+            MuiMenuItem: {
+                root: {
+                    disableRipple: true
+                }
+            }
         },
     })
 );

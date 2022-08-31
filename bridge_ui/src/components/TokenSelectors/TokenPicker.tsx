@@ -104,6 +104,7 @@ const useStyles = makeStyles((theme) =>
       display: "flex",
       flexDirection: "row",
       alignItems: "center",
+      width: "100%"
     },
     grower: {
       flexGrow: 1,
@@ -405,7 +406,6 @@ export default function TokenPicker({
       onClose={closeDialog}
       aria-labelledby="simple-dialog-title"
       open={dialogIsOpen}
-      maxWidth="sm"
       fullWidth
     >
       <DialogTitle>

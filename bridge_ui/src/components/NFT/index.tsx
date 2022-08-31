@@ -28,7 +28,6 @@ import Source from "./Source";
 import SourcePreview from "./SourcePreview";
 import Target from "./Target";
 import TargetPreview from "./TargetPreview";
-import '../../style.css'
 
 function NFT() {
     useCheckIfWormholeWrapped(true);
@@ -83,7 +82,7 @@ function NFT() {
         }
     }, [preventNavigation]);
     return (
-        <Container maxWidth="md">
+        <div className="my-8">
             <Stepper activeStep={activeStep} orientation="vertical">
                 <Step
                     expanded={activeStep >= 0}
@@ -128,7 +127,7 @@ function NFT() {
                     </StepContent>
                 </Step>
             </Stepper>
-        </Container>
+        </div>
     );
 }
 

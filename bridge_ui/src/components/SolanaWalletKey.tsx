@@ -20,7 +20,7 @@ const SolanaWalletKey = () => {
   }, [publicKey]);
 
   return (
-    <>
+    <div className="mx-auto">
       <ToggleConnectedButton
         connect={openDialog}
         disconnect={disconnect}
@@ -29,7 +29,7 @@ const SolanaWalletKey = () => {
         walletIcon={wallet?.adapter.icon}
       />
       <SolanaConnectWalletDialog isOpen={isDialogOpen} onClose={closeDialog} />
-    </>
+    </div>
   );
 };
 

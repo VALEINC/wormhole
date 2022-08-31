@@ -138,7 +138,6 @@ const useStyles = makeStyles((theme) => ({
     transition: "background-position 1s, transform 0.25s",
     "&:hover": {
       backgroundPosition: "right center",
-      transform: "scale(1.25)",
     },
     backgroundSize: "200% auto",
     backgroundColor: "#ffb347",

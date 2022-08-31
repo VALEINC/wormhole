@@ -24,6 +24,7 @@ import NFTOriginVerifier from "./components/NFTOriginVerifier";
 import TokenOriginVerifier from "./components/TokenOriginVerifier";
 import UnwrapNative from "./components/UnwrapNative";
 import WithdrawTokensTerra from "./components/WithdrawTokensTerra";
+import Header from "./components/MP/Header";
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -95,11 +96,27 @@ function App() {
                     </Tabs>
                 </Container>
             ) : null} */}
-            <div className="container">
-                <div className="body">
-                    <div className="header">
-                        <h1>Tombola NFT Bridge</h1>
-                        <h3>Use Wormhole to sell Ethereum NFTs on Solana or bridge an item you've won back to an ERC-721 token.</h3>
+            <div>
+                <div className="w-11/12 md:w-11/12 lg:w-10/12 xl:w-3/4 mx-auto text-white">
+                    <Header />
+                    <div className="my-8 flex flex-col gap-4">
+                        <div className="text-base">Use the Tombola Ethereum Bridge (powered by Wormhole) to transfer an NFT cross-chain</div>
+                        <div className="flex flex-col gap-2">
+                            <div className="font-medium text-base">
+                            Are you a Seller? 
+                            </div>
+                            <div>
+                                Use the bridge to send an NFT from Ethereum to Solana. Then contact us on <a className="font-bold" href='https://discord.gg/RD7MRVQwAG'>Discord</a> to sell your NFT on Tombola.
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <div className="font-medium text-base">
+                            Are you a Buyer? 
+                            </div>
+                            <div>
+                                Use the bridge to transfer a bridged Ethereum NFT back to the Ethereum chain from Solana.
+                            </div>
+                        </div>
                     </div>
                     <Switch>
                         <Route exact path="/">

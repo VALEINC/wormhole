@@ -12,11 +12,12 @@ import { TerraWalletProvider } from "./contexts/TerraWalletContext.tsx";
 import ErrorBoundary from "./ErrorBoundary";
 import { theme } from "./muiTheme";
 import { store } from "./store";
+import './index.css';
 
 ReactDOM.render(
     <ErrorBoundary>
         <Provider store={store}>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={theme} injectFirst>
                 <CssBaseline />
                 <ErrorBoundary>
                     <SnackbarProvider maxSnack={3}>
