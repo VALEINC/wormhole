@@ -99,8 +99,8 @@ function App() {
             <div>
                 <div className="w-11/12 md:w-11/12 lg:w-10/12 xl:w-3/4 mx-auto text-white">
                     <Header />
-                    <div className="my-8 flex flex-col gap-4">
-                        <div className="text-base">Use the Tombola Ethereum Bridge (powered by Wormhole) to transfer an NFT cross-chain</div>
+                    <div className="my-8 flex flex-col gap-4 text-center">
+                        <div className="text-base">Use the Tombola Ethereum Bridge (powered by Wormhole) to transfer an NFT cross-chain!</div>
                         <div className="flex flex-col gap-2">
                             <div className="font-medium text-base">
                             Are you a Seller? 
